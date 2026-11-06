@@ -18,17 +18,21 @@
         .lang-buttons { display: flex; justify-content: center; gap: 5px; margin-bottom: 20px; flex-wrap: wrap; }
         .lang-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
         #welcome-text { font-size: 16px; line-height: 1.6; color: #e0e0e0; font-style: italic; max-width: 600px; margin: 0 auto 30px; }
+        
         .menu-section { margin-bottom: 40px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .menu-category { color: #d4af37; font-size: 24px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .menu-category { color: #d4af37; font-size: 24px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
         .menu-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px; }
         .item-name { font-size: 18px; font-weight: bold; }
-        .item-price { font-size: 18px; color: #d4af37; font-weight: bold; }
-        .order-section { background-color: #1e1e1e; border: 1px solid #d4af37; border-radius: 12px; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .item-ingredients { font-size: 13px; color: #999; font-style: italic; margin-top: 5px; line-height: 1.4; }
+        .item-price { font-size: 18px; color: #d4af37; font-weight: bold; white-space: nowrap; }
+        
+        .order-section { background-color: #1e1e1e; border: 1px solid #d4af37; border-radius: 12px; padding: 20px; max-width: 600px; margin: 0 auto 50px; }
         .whatsapp-btn { display: inline-block; background-color: #25D366; color: #000; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-weight: bold; font-size: 18px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
+    <!-- الشعارات -->
     <div class="header">
         <div class="brand">
             <img src="three-corners.png.png" alt="Three Corners">
@@ -40,12 +44,14 @@
         </div>
     </div>
 
+    <!-- أزرار السوشيال ميديا -->
     <div class="social-links">
         <a href="https://www.google.com/maps/search/?api=1&query=Zeytouna+Beach+El+Gouna" target="_blank" class="social-btn btn-google">⭐ Google Review</a>
         <a href="https://www.facebook.com/share/19qvkKPQsd/" target="_blank" class="social-btn btn-facebook">f Facebook</a>
         <a href="https://www.instagram.com/zeytounaisland" target="_blank" class="social-btn btn-instagram">📸 Instagram</a>
     </div>
 
+    <!-- أزرار اللغات -->
     <div class="lang-buttons">
         <button class="lang-btn" onclick="changeLang('ar')">AR</button>
         <button class="lang-btn" onclick="changeLang('en')">EN</button>
@@ -55,23 +61,77 @@
         <button class="lang-btn" onclick="changeLang('nl')">NL</button>
         <button class="lang-btn" onclick="changeLang('it')">IT</button>
     </div>
+    
+    <!-- رسالة الترحيب -->
     <div id="welcome-text"></div>
 
+    <!-- قسم القهوة الساخنة -->
     <div class="menu-section">
-        <h2 class="menu-category">HOT COFFEE</h2>
-        <div class="menu-item"><span class="item-name">Turkish Coffee - Sade</span><span class="item-price">150 EGP</span></div>
-        <div class="menu-item"><span class="item-name">Turkish Coffee - with Milk</span><span class="item-price">150 EGP</span></div>
-        <div class="menu-item"><span class="item-name">Espresso - Single</span><span class="item-price">150 EGP</span></div>
-        <div class="menu-item"><span class="item-name">Cappuccino</span><span class="item-price">180 EGP</span></div>
-        <div class="menu-item"><span class="item-name">Café Latte</span><span class="item-price">180 EGP</span></div>
+        <h2 class="menu-category">Hot Coffee</h2>
+        <div class="menu-item"><div><div class="item-name">Turkish Coffee - Sade</div><div class="item-ingredients">Espresso-style Turkish coffee, no sugar</div></div><span class="item-price">150 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Turkish Coffee - with Milk</div><div class="item-ingredients">Turkish coffee with milk</div></div><span class="item-price">150 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Espresso - Single</div><div class="item-ingredients">Rich single shot of espresso</div></div><span class="item-price">150 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Cappuccino</div><div class="item-ingredients">Espresso, steamed milk, and thick milk foam</div></div><span class="item-price">180 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Café Latte</div><div class="item-ingredients">Espresso with steamed milk and a light layer of foam</div></div><span class="item-price">180 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Mocha</div><div class="item-ingredients">Espresso, chocolate sauce, and steamed milk</div></div><span class="item-price">190 EGP</span></div>
     </div>
 
+    <!-- قسم القهوة الباردة -->
+    <div class="menu-section">
+        <h2 class="menu-category">Iced Coffee</h2>
+        <div class="menu-item"><div><div class="item-name">Iced Latte</div><div class="item-ingredients">Espresso, cold milk, and ice</div></div><span class="item-price">190 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Iced Mocha</div><div class="item-ingredients">Espresso, chocolate sauce, cold milk, and ice</div></div><span class="item-price">200 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Cold Brew</div><div class="item-ingredients">Slow-steeped cold coffee</div></div><span class="item-price">200 EGP</span></div>
+    </div>
+
+    <!-- قسم الموك تيل -->
+    <div class="menu-section">
+        <h2 class="menu-category">Mocktails & Juices</h2>
+        <div class="menu-item"><div><div class="item-name">Virgin Mojito</div><div class="item-ingredients">Lime, mint, sugar, and soda water</div></div><span class="item-price">250 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Mango & Guava Sour</div><div class="item-ingredients">Mango and guava blended with sour mix</div></div><span class="item-price">250 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Passion Lemonada</div><div class="item-ingredients">Passion fruit with lemonade</div></div><span class="item-price">250 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Virgin Colada</div><div class="item-ingredients">Pineapple juice, coconut cream, and ice</div></div><span class="item-price">250 EGP</span></div>
+    </div>
+
+    <!-- قسم الأكل (برجر وراب) -->
+    <div class="menu-section">
+        <h2 class="menu-category">Burgers & Wraps</h2>
+        <div class="menu-item"><div><div class="item-name">Beef Eater Burger</div><div class="item-ingredients">Flame-grilled beef burger, toasted bun, lettuce, cheese, caramelized onion, tomato, egg</div></div><span class="item-price">395 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Chicken Teriyaki</div><div class="item-ingredients">Shredded teriyaki chicken, cabbage, green curry paste, coriander, toasted tortilla bread</div></div><span class="item-price">299 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Beef Fajitas</div><div class="item-ingredients">Soft flour tortilla, beef strips, capsicum, mushroom, onion, jalapeños, cheddar cheese, guacamole, sour cream</div></div><span class="item-price">550 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Seafood Fajitas</div><div class="item-ingredients">Soft flour tortilla, shrimps, capsicum, mushroom, onion, jalapeños, cheddar cheese, guacamole, sour cream</div></div><span class="item-price">610 EGP</span></div>
+    </div>
+
+    <!-- قسم البيتزا -->
+    <div class="menu-section">
+        <h2 class="menu-category">Pizza</h2>
+        <div class="menu-item"><div><div class="item-name">Vegetarian Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, zucchini, mushroom, sundried tomato, onions, bell pepper, olives</div></div><span class="item-price">345 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">BBQ Chicken Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, grilled chicken, roasted pepper, onion, BBQ sauce, black olives</div></div><span class="item-price">395 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Spiced Beef Steak Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, grilled beef steak, sautéed onion, triple cheese, mushroom</div></div><span class="item-price">495 EGP</span></div>
+    </div>
+
+    <!-- قسم المكرونة -->
+    <div class="menu-section">
+        <h2 class="menu-category">Mac & Cheese</h2>
+        <div class="menu-item"><div><div class="item-name">Chicken Mac</div><div class="item-ingredients">Mac pasta, cheese sauce, sautéed chicken, green onions, mushrooms, chopped parsley</div></div><span class="item-price">395 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Our Family Favorite</div><div class="item-ingredients">Traditional baked mac & cheese with short pasta, beef bacon, cheddar cheese sauce</div></div><span class="item-price">425 EGP</span></div>
+    </div>
+
+    <!-- قسم الحلويات -->
+    <div class="menu-section">
+        <h2 class="menu-category">Desserts</h2>
+        <div class="menu-item"><div><div class="item-name">Tiramisu</div><div class="item-ingredients">Mascarpone, ladyfinger biscuits, espresso coffee, chocolate chips</div></div><span class="item-price">218 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Cheesecake</div><div class="item-ingredients">Mascarpone cheese, biscuit crust, mint, fresh seasonal fruits</div></div><span class="item-price">226 EGP</span></div>
+    </div>
+
+    <!-- زر الواتساب -->
     <div class="order-section">
         <h3 style="color: #d4af37; margin-top: 0;">Order via WhatsApp</h3>
         <p style="color: #ccc; font-size: 14px;">Please mention your Umbrella Number</p>
         <a href="https://wa.me/201275840672" class="whatsapp-btn" target="_blank">💬 Send Order</a>
     </div>
 
+    <!-- كود اللغات -->
     <script>
         const translations = {
             ar: "أهلاً بك في جزيرة الزيتونة.. حيث تلتقي زرقة المياه بنقاء السماء. هنا، في هذه البقعة الساحرة من البحر الأحمر، صنعنا لك مساحة لتهدأ فيها الروح وتستمتع بلحظات لا تُنسى. أنت لست مجرد ضيف عندنا، أنت جزء من ذكريات هذه الجزيرة. استمتع بوقتك، فكل تفصيلة هنا صُممت من أجلك.",
