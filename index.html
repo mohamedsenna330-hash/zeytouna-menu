@@ -17,7 +17,10 @@
         .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .lang-buttons { display: flex; justify-content: center; gap: 5px; margin-bottom: 20px; flex-wrap: wrap; }
         .lang-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
-        #welcome-text { font-size: 16px; line-height: 1.6; color: #e0e0e0; font-style: italic; max-width: 600px; margin: 0 auto 30px; }
+        
+        .welcome-section { margin-bottom: 20px; }
+        #welcome-text { font-size: 16px; line-height: 1.6; color: #e0e0e0; font-style: italic; max-width: 600px; margin: 0 auto; }
+        .umbrella-box { background-color: #d4af37; color: #000; display: inline-block; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 24px; margin: 15px 0; }
         
         .menu-section { margin-bottom: 40px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
         .menu-category { color: #d4af37; font-size: 24px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
@@ -62,8 +65,11 @@
         <button class="lang-btn" onclick="changeLang('it')">IT</button>
     </div>
     
-    <!-- رسالة الترحيب -->
-    <div id="welcome-text"></div>
+    <!-- رسالة الترحيب ورقم الشماسة -->
+    <div class="welcome-section">
+        <div id="welcome-text"></div>
+        <div id="umbrella-display" class="umbrella-box" style="display: none;"></div>
+    </div>
 
     <!-- قسم القهوة الساخنة -->
     <div class="menu-section">
@@ -89,39 +95,13 @@
         <h2 class="menu-category">Mocktails & Juices</h2>
         <div class="menu-item"><div><div class="item-name">Virgin Mojito</div><div class="item-ingredients">Lime, mint, sugar, and soda water</div></div><span class="item-price">250 EGP</span></div>
         <div class="menu-item"><div><div class="item-name">Mango & Guava Sour</div><div class="item-ingredients">Mango and guava blended with sour mix</div></div><span class="item-price">250 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Passion Lemonada</div><div class="item-ingredients">Passion fruit with lemonade</div></div><span class="item-price">250 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Virgin Colada</div><div class="item-ingredients">Pineapple juice, coconut cream, and ice</div></div><span class="item-price">250 EGP</span></div>
     </div>
 
     <!-- قسم الأكل (برجر وراب) -->
     <div class="menu-section">
         <h2 class="menu-category">Burgers & Wraps</h2>
-        <div class="menu-item"><div><div class="item-name">Beef Eater Burger</div><div class="item-ingredients">Flame-grilled beef burger, toasted bun, lettuce, cheese, caramelized onion, tomato, egg</div></div><span class="item-price">395 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Chicken Teriyaki</div><div class="item-ingredients">Shredded teriyaki chicken, cabbage, green curry paste, coriander, toasted tortilla bread</div></div><span class="item-price">299 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Beef Fajitas</div><div class="item-ingredients">Soft flour tortilla, beef strips, capsicum, mushroom, onion, jalapeños, cheddar cheese, guacamole, sour cream</div></div><span class="item-price">550 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Seafood Fajitas</div><div class="item-ingredients">Soft flour tortilla, shrimps, capsicum, mushroom, onion, jalapeños, cheddar cheese, guacamole, sour cream</div></div><span class="item-price">610 EGP</span></div>
-    </div>
-
-    <!-- قسم البيتزا -->
-    <div class="menu-section">
-        <h2 class="menu-category">Pizza</h2>
-        <div class="menu-item"><div><div class="item-name">Vegetarian Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, zucchini, mushroom, sundried tomato, onions, bell pepper, olives</div></div><span class="item-price">345 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">BBQ Chicken Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, grilled chicken, roasted pepper, onion, BBQ sauce, black olives</div></div><span class="item-price">395 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Spiced Beef Steak Pizza</div><div class="item-ingredients">Mozzarella cheese, tomato sauce, grilled beef steak, sautéed onion, triple cheese, mushroom</div></div><span class="item-price">495 EGP</span></div>
-    </div>
-
-    <!-- قسم المكرونة -->
-    <div class="menu-section">
-        <h2 class="menu-category">Mac & Cheese</h2>
-        <div class="menu-item"><div><div class="item-name">Chicken Mac</div><div class="item-ingredients">Mac pasta, cheese sauce, sautéed chicken, green onions, mushrooms, chopped parsley</div></div><span class="item-price">395 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Our Family Favorite</div><div class="item-ingredients">Traditional baked mac & cheese with short pasta, beef bacon, cheddar cheese sauce</div></div><span class="item-price">425 EGP</span></div>
-    </div>
-
-    <!-- قسم الحلويات -->
-    <div class="menu-section">
-        <h2 class="menu-category">Desserts</h2>
-        <div class="menu-item"><div><div class="item-name">Tiramisu</div><div class="item-ingredients">Mascarpone, ladyfinger biscuits, espresso coffee, chocolate chips</div></div><span class="item-price">218 EGP</span></div>
-        <div class="menu-item"><div><div class="item-name">Cheesecake</div><div class="item-ingredients">Mascarpone cheese, biscuit crust, mint, fresh seasonal fruits</div></div><span class="item-price">226 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Beef Eater Burger</div><div class="item-ingredients">Flame-grilled beef burger, toasted bun, lettuce, cheese</div></div><span class="item-price">395 EGP</span></div>
+        <div class="menu-item"><div><div class="item-name">Chicken Teriyaki</div><div class="item-ingredients">Shredded teriyaki chicken, cabbage, toasted tortilla</div></div><span class="item-price">299 EGP</span></div>
     </div>
 
     <!-- زر الواتساب -->
@@ -131,7 +111,7 @@
         <a href="https://wa.me/201275840672" class="whatsapp-btn" target="_blank">💬 Send Order</a>
     </div>
 
-    <!-- كود اللغات -->
+    <!-- كود اللغات وترقيم الشماسي -->
     <script>
         const translations = {
             ar: "أهلاً بك في جزيرة الزيتونة.. حيث تلتقي زرقة المياه بنقاء السماء. هنا، في هذه البقعة الساحرة من البحر الأحمر، صنعنا لك مساحة لتهدأ فيها الروح وتستمتع بلحظات لا تُنسى. أنت لست مجرد ضيف عندنا، أنت جزء من ذكريات هذه الجزيرة. استمتع بوقتك، فكل تفصيلة هنا صُممت من أجلك.",
@@ -146,7 +126,23 @@
         function changeLang(lang) {
             document.getElementById('welcome-text').innerText = translations[lang];
         }
-        changeLang('en');
+        
+        function checkUmbrella() {
+            const hash = window.location.hash;
+            const umbrellaDiv = document.getElementById('umbrella-display');
+            if (hash && hash.startsWith('#s')) {
+                const umbrellaNum = hash.replace('#s', '');
+                umbrellaDiv.innerText = "Umbrella " + umbrellaNum;
+                umbrellaDiv.style.display = 'inline-block';
+            } else {
+                umbrellaDiv.style.display = 'none';
+            }
+        }
+
+        window.onload = function() {
+            changeLang('en');
+            checkUmbrella();
+        };
     </script>
 </body>
 </html>
