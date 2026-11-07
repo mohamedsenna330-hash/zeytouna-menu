@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zeytouna Beach Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceee3;--card:#f7f8f1;--ink:#272c1c;--mute:#646b53;--acc:#5a6a22;--line:#cdd2bc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171a10;--card:#21251a;--ink:#eceee0;--mute:#a9b096;--acc:#b9c765;--line:#383e2a}}
+:root[data-theme="dark"]{--bg:#171a10;--card:#21251a;--ink:#eceee0;--mute:#a9b096;--acc:#b9c765;--line:#383e2a}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 Jost,system-ui,sans-serif}
+header{padding:28px 20px 8px;text-align:center}
+.tagbox{max-width:420px;margin:0 auto 6px;padding:10px 0 4px}
+.tagbox span{display:block;font:italic 600 20px/1.2 "Cormorant Garamond",Georgia,serif;color:var(--acc);letter-spacing:.04em}
+.tagbox a{display:inline-block;margin-top:6px;font:500 13px/1 Jost,sans-serif;letter-spacing:.16em;color:var(--mute);text-decoration:none}
+.tagbox a:hover,.tagbox a:focus-visible{text-decoration:underline}
+h1{font:700 36px/1.05 "Cormorant Garamond",Georgia,serif;margin:0}
+header p{margin:6px 0 0;color:var(--mute);font-size:14px}
+.welcome{font:700 24px/1.3 "Cormorant Garamond",Georgia,serif;color:var(--acc);margin:12px 0 0}
+.box{max-width:680px;margin:16px auto 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.wa{border:2px solid var(--acc);text-align:center}
+a.num{display:inline-flex;align-items:center;gap:10px;margin:10px 0 4px;padding:10px 18px;border-radius:30px;background:#25D366;color:#10260f;font:500 22px/1 Jost,sans-serif;text-decoration:none}
+a.num:focus-visible,.wb:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.mute{color:var(--mute);font-size:14px}
+h2{font:700 28px/1.1 "Cormorant Garamond",Georgia,serif;margin:0 0 4px;color:var(--acc)}
+.box h2{font-size:24px}
+label.f{display:block;margin:10px 0 4px;font-weight:500;font-size:15px}
+input[type=text],select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:400 16px/1.4 Jost,system-ui,sans-serif}
+.btn{cursor:pointer;border:0;border-radius:24px;padding:11px 18px;background:var(--acc);color:var(--bg);font:500 15px Jost,sans-serif;margin:10px 8px 0 0}
+.btn.alt{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+#qrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:14px}
+.qc{text-align:center;font-size:13px}
+.qc canvas{width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+.qc a{color:var(--acc);font-weight:500}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);margin-top:14px}
+nav a{flex:none;color:var(--ink);text-decoration:none;padding:6px 14px;border:1px solid var(--line);border-radius:20px;font-weight:500;font-size:14px}
+main{max-width:680px;margin:0 auto;padding:8px 16px}
+section{margin-top:28px}
+.note{margin:0 0 10px;color:var(--mute);font-size:14px}
+.item{padding:12px 0;border-bottom:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;gap:16px}
+.item b{font-weight:500}
+.item small{display:block;color:var(--mute);font-size:14px}
+.r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.price{white-space:nowrap;font-weight:500}
+.wb{display:inline-block;background:#25D366;color:#10260f;text-decoration:none;font:500 13px Jost,sans-serif;padding:7px 12px;border-radius:18px;white-space:nowrap}
+.cz{margin-top:6px;background:none;border:0;color:var(--acc);font:500 14px Jost,sans-serif;padding:4px 0;text-decoration:underline;cursor:pointer}
+.opts{display:none;margin-top:6px;gap:6px;flex-wrap:wrap}
+.opts.open{display:flex}
+.opts label{display:inline-flex;padding:6px 12px;border:1px solid var(--line);border-radius:18px;font-size:14px;cursor:pointer}
+.opts label:has(input:checked){background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label:has(input:focus-visible){outline:2px solid var(--acc)}
+.al{max-width:648px;margin:28px auto 110px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:14px;color:var(--mute)}
+.al b{color:var(--ink)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{cursor:pointer;width:36px;height:36px;border-radius:50%;border:1px solid var(--acc);background:transparent;color:var(--acc);font:500 20px/1 Jost,sans-serif}
+.qty output{min-width:16px;text-align:center;font-weight:500;display:none}
+.qty.on output{display:inline}
+.qty:not(.on) button[data-d="-1"]{display:none}
+.qty.on button[data-d="1"]{background:var(--acc);color:var(--bg)}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}
+#bar b{font-weight:500}
+#send{background:#25D366;color:#10260f;text-decoration:none;font-weight:500;padding:12px 18px;border-radius:24px}
+#send:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.ub{display:inline-block;margin:10px auto 0;padding:8px 22px;border-radius:30px;background:var(--acc);color:var(--bg);font:700 26px/1.1 "Cormorant Garamond",Georgia,serif}
+.soc{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:12px auto 0;max-width:420px}
+.sb{display:inline-block;text-decoration:none;color:#fff;padding:8px 15px;border-radius:20px;font:700 14px Jost,sans-serif}
+.sb.g{background:#db4437}.sb.f{background:#1877F2}.sb.i{background:#E1306C}
+.sb:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.op{margin:14px 0 0;font-weight:500;font-size:15px;color:var(--ink)}
+.lang{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:14px 0 0}
+.lang button{cursor:pointer;border:1px solid var(--acc);background:transparent;color:var(--acc);border-radius:18px;padding:6px 12px;font:500 13px Jost,sans-serif}
+.lang button[aria-pressed="true"]{background:var(--acc);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.wmsg{max-width:560px;margin:12px auto 0;font:500 17px/1.6 Jost,system-ui,sans-serif;color:var(--ink)}
+.hide{display:none!important}
+</style></head><body>
+<header><div class="tagbox"><span>A Touch of Belgian Hospitality</span><a href="https://www.threecorners.com" target="_blank" rel="noopener">www.threecorners.com</a></div>
+<div class="soc"><div class="op" id="op" style="width:100%">Your opinion matters. Share your experience with us.</div><a class="sb g" href="https://www.google.com/maps/search/?api=1&query=Zeytouna+Beach+El+Gouna" target="_blank" rel="noopener">⭐ Google Review</a><a class="sb f" href="https://www.facebook.com/share/19qvkKPQsd/" target="_blank" rel="noopener">f Facebook</a><a class="sb i" href="https://www.instagram.com/zeytounaisland" target="_blank" rel="noopener">📸 Instagram</a></div>
+<h1>Zeytouna Beach</h1><p>El Gouna · Red Sea · prices in EGP</p><p>In cooperation with Three Corners Ocean View</p>
+<div class="lang" id="lang" role="group" aria-label="Language"></div><p class="wmsg" id="wmsg"></p>
+<div class="welcome hide" id="welcome"></div><div class="ub hide" id="ub"></div></header>
+
+<div class="box" id="admin"><h2>QR code generator</h2>
+<p class="mute">For staff. Host this file online, then paste its web address below. Each QR opens this menu for one point and one umbrella (1 to 30). This tool is hidden for guests who arrive from a QR code.</p>
+<label class="f" for="base">Menu web address</label><input type="text" id="base" inputmode="url" autocomplete="off">
+<label class="f" for="gp">Point</label><select id="gp"></select>
+<button class="btn" id="gen" type="button">Generate QR Codes</button><button class="btn alt hide" id="dlsel" type="button">Download all generated (ZIP of images)</button>
+<p class="mute" id="gst" style="margin:8px 0 0"></p>
+<div id="qrs"></div></div>
+
+<div class="box wa"><div style="font-weight:500">To order via WhatsApp:</div>
+<a class="num" id="top" href="#" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#10260f" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg><span>+20 1275840672</span></a>
+<div class="mute">Tell us where you are sitting so we can bring your order</div>
+<div style="margin-top:8px"><label class="f" for="umb" style="font-size:17px">Where are you sitting?</label><input type="text" id="umb" maxlength="80" autocomplete="off" placeholder="Umbrella number, e.g. 12" style="text-align:center;font-size:20px"><div id="umbe" class="hide" style="margin-top:6px;font-weight:500;color:var(--acc)">Please tell us where you are sitting first</div></div>
+<div id="selw" class="hide"><label class="f" for="sel">Where are you sitting?</label><select id="sel"><option value="">Select your point</option></select></div></div>
+
+<nav id="nav"></nav>
+<main id="menu"></main>
+
+<div class="box"><h2>Order details</h2>
+<label class="f" for="alg">Allergies, if any</label><textarea id="alg" rows="2" placeholder="e.g. nuts, dairy, gluten, seafood"></textarea>
+<label class="f" for="ext">Extras and special requests</label><textarea id="ext" rows="2" placeholder="e.g. extra sauce, no ice"></textarea>
+<p class="mute" style="margin:8px 0 0">These details are added to your WhatsApp order message.</p></div>
+<div class="al"><b>Allergy notice:</b> Please inform our team if you have any allergies. Some dishes may contain: nuts, dairy, gluten, or seafood.</div>
+
+<div id="bar" class="hide"><div><b id="sum"></b><small id="locs" style="display:block;color:var(--mute)"></small></div><a id="send" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a></div>
+<script>
+function qrMatrix(text){
+const ECC=[-1,10,16,26,18,24,16,18,22,22,26,30,22,22,24,24],NB=[-1,1,1,1,2,2,4,4,4,5,5,5,8,9,9,10];
+const bytes=[...new TextEncoder().encode(text)];
+const raw=v=>{let r=(16*v+128)*v+64;if(v>=2){const a=Math.floor(v/7)+2;r-=(25*a-10)*a-55;if(v>=7)r-=36}return r};
+let ver=1;for(;ver<=15;ver++){const dc=Math.floor(raw(ver)/8)-ECC[ver]*NB[ver];if(4+(ver<=9?8:16)+8*bytes.length<=dc*8)break}
+if(ver>15)throw new Error('URL too long');
+const size=ver*4+17,dcw=Math.floor(raw(ver)/8)-ECC[ver]*NB[ver];
+const bits=[];const put=(v,n)=>{for(let i=n-1;i>=0;i--)bits.push((v>>>i)&1)};
+put(4,4);put(bytes.length,ver<=9?8:16);bytes.forEach(b=>put(b,8));
+put(0,Math.min(4,dcw*8-bits.length));while(bits.length%8)bits.push(0);
+for(let p=0xEC;bits.length<dcw*8;p^=0xEC^0x11)put(p,8);
+const data=[];for(let i=0;i<bits.length;i+=8){let b=0;for(let j=0;j<8;j++)b=b<<1|bits[i+j];data.push(b)}
+const mul=(x,y)=>{let z=0;for(let i=7;i>=0;i--){z=(z<<1)^((z>>7)*0x11D);z^=((y>>i)&1)*x}return z};
+const el=ECC[ver],nb=NB[ver];
+const div=(()=>{const r=Array(el-1).fill(0).concat([1]);let root=1;for(let i=0;i<el;i++){for(let j=0;j<el;j++){r[j]=mul(r[j],root);if(j+1<el)r[j]^=r[j+1]}root=mul(root,2)}return r})();
+const rem=d=>{const r=div.map(()=>0);for(const b of d){const f=b^r.shift();r.push(0);div.forEach((c,i)=>{r[i]^=mul(c,f)})}return r};
+const nShort=nb-Math.floor(raw(ver)/8)%nb,shortLen=Math.floor(Math.floor(raw(ver)/8)/nb);
+const blocks=[];let k=0;
+for(let i=0;i<nb;i++){const d=data.slice(k,k+shortLen-el+(i<nShort?0:1));k+=d.length;const e=rem(d);if(i<nShort)d.push(0);blocks.push(d.concat(e))}
+const all=[];for(let i=0;i<blocks[0].length;i++)blocks.forEach((b,j)=>{if(i!==shortLen-el||j>=nShort)all.push(b[i])});
+const M=Array.from({length:size},()=>Array(size).fill(false)),F=Array.from({length:size},()=>Array(size).fill(false));
+const set=(x,y,v)=>{if(x>=0&&x<size&&y>=0&&y<size){M[y][x]=v;F[y][x]=true}};
+for(let i=0;i<size;i++){set(6,i,i%2===0);set(i,6,i%2===0)}
+[[3,3],[size-4,3],[3,size-4]].forEach(([x,y])=>{for(let dy=-4;dy<=4;dy++)for(let dx=-4;dx<=4;dx++){const d=Math.max(Math.abs(dx),Math.abs(dy));set(x+dx,y+dy,d!==2&&d!==4)}});
+if(ver>1){const n=Math.floor(ver/7)+2,step=ver===32?26:Math.ceil((ver*4+4)/(n*2-2))*2,pos=[6];for(let p=size-7;pos.length<n;p-=step)pos.splice(1,0,p);
+for(let i=0;i<n;i++)for(let j=0;j<n;j++){if((i===0&&j===0)||(i===0&&j===n-1)||(i===n-1&&j===0))continue;for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++)set(pos[i]+dx,pos[j]+dy,Math.max(Math.abs(dx),Math.abs(dy))!==1)}}
+const fmt=m=>{const d=m;let r=d;for(let i=0;i<10;i++)r=(r<<1)^((r>>9)*0x537);const b=((d<<10)|r)^0x5412,g=i=>((b>>i)&1)!==0;
+for(let i=0;i<=5;i++)set(8,i,g(i));set(8,7,g(6));set(8,8,g(7));set(7,8,g(8));for(let i=9;i<15;i++)set(14-i,8,g(i));
+for(let i=0;i<8;i++)set(size-1-i,8,g(i));for(let i=8;i<15;i++)set(8,size-15+i,g(i));set(8,size-8,true)};
+fmt(0);
+if(ver>=7){let r=ver;for(let i=0;i<12;i++)r=(r<<1)^((r>>11)*0x1F25);const b=(ver<<12)|r;for(let i=0;i<18;i++){const c=((b>>i)&1)!==0,a=size-11+i%3,bb=Math.floor(i/3);set(a,bb,c);set(bb,a,c)}}
+let i=0;
+for(let right=size-1;right>=1;right-=2){if(right===6)right=5;for(let v=0;v<size;v++)for(let j=0;j<2;j++){const x=right-j,up=((right+1)&2)===0,y=up?size-1-v:v;if(!F[y][x]&&i<all.length*8){M[y][x]=((all[i>>3]>>(7-(i&7)))&1)!==0;i++}}}
+const mk=[(x,y)=>(x+y)%2===0,(x,y)=>y%2===0,(x,y)=>x%3===0,(x,y)=>(x+y)%3===0,(x,y)=>(Math.floor(x/3)+Math.floor(y/2))%2===0,(x,y)=>x*y%2+x*y%3===0,(x,y)=>(x*y%2+x*y%3)%2===0,(x,y)=>((x+y)%2+x*y%3)%2===0];
+const apply=m=>{for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(!F[y][x]&&mk[m](x,y))M[y][x]=!M[y][x]};
+const pen=()=>{let p=0;for(let a=0;a<size;a++){for(const row of [true,false]){let run=1;for(let b=1;b<size;b++){const c=row?M[a][b]===M[a][b-1]:M[b][a]===M[b-1][a];if(c){run++;if(run===5)p+=3;else if(run>5)p++}else run=1}}}
+for(let y=0;y<size-1;y++)for(let x=0;x<size-1;x++)if(M[y][x]===M[y][x+1]&&M[y][x]===M[y+1][x]&&M[y][x]===M[y+1][x+1])p+=3;return p};
+let best=0,bp=1e9;for(let m=0;m<8;m++){apply(m);fmt(m);const p=pen();if(p<bp){bp=p;best=m}apply(m)}
+apply(best);fmt(best);
+return M}
+
+
+const M=[["Hot Coffee","",[["Turkish Coffee: Sade","Turkish coffee, water",150],["Turkish Coffee: with Milk","Turkish coffee, water, milk",150],["Turkish Coffee: Double Shot","Double portion of Turkish coffee, water",150],["Espresso: Single","Espresso beans, single extraction",150],["Espresso: Double","Espresso beans, double extraction",180],["Americano","Espresso shots, hot water",160],["Cappuccino","Espresso shots, steamed milk, dense milk foam",180],["Café Latte","Espresso shots, steamed milk, thin milk foam",180],["Mocha","Espresso shots, chocolate sauce, milk, cream",190],["Macchiato","Espresso shots, milk foam",170],["Flat White","Espresso (ristretto), microfoam milk",180],["Hot Chocolate","Chocolate powder/sauce, warm milk, cream",200]]],["Iced Coffee","",[["Iced Americano","Espresso shots, water, ice cubes",170],["Iced Latte","Espresso shots, cold milk, ice, optional syrup",190],["Iced Cappuccino","Espresso shots, cold milk, cold foam topping, ice",190],["Iced Mocha","Espresso shots, chocolate sauce, milk, cream, ice",200],["Frappé Coffee","Espresso shots, frappe base, milk, ice, cream",210],["Cold Brew","Slow-steeped cold brew coffee, ice cubes, optional syrup",200],["Iced White Mocha","Espresso shots, white chocolate sauce, milk, cream, ice",210]]],["Zeytouna Specials","Signature drinks",[["Zaytouna Mocha","Espresso shots, chocolate sauce, milk, cream, drizzle",190],["Coconut Mocha","Espresso shots, chocolate sauce, coconut syrup, milk, coconut flakes",310],["Caramel Macchiato","Espresso shots, caramel, vanilla, milk, ice",250],["Caramel Crunch","Espresso shots, caramel, milk, cream, toffee crunch",250],["Vanilla Latte","Espresso shots, vanilla, milk, ice",250],["Strawberry Shortcake","Strawberry puree, vanilla, milk, fresh strawberries, cream",180],["Blended Frappe","Espresso shots, chocolate sauce, milk, cream, chocolate chips",210]]],["Fresh Juices","",[["Fresh Orange Juice","",200],["Fresh Mango Juice","",200],["Fresh Guava Juice","",200],["Fresh Strawberry Juice","",200],["Fresh Lemon & Mint","",200]]],["Canned Juices","",[["Canned Orange Juice","",95],["Canned Mango Juice","",95],["Canned Guava Juice","",95],["Canned Apple Juice","",95],["Canned Pineapple Juice","",95]]],["Soft Drinks & Water","",[["Large Mineral Water","",100],["Small Mineral Water","",70],["Pepsi","",95],["Diet Pepsi","",95],["Seven Up","",95],["Miranda","",95],["Tonic Water","",95],["Soda Water","",95],["Red Bull (Energy Drink)","",150]]],["Mocktails","Non-alcoholic",[["Mango & Guava Sour","Mango and guava blended with sour mix",250],["Passion Lemonada","Passion fruit with lemonade",250],["Florida","Mixed fruit mocktail",250],["Virgin Colada","Pineapple juice, coconut cream, and ice",250],["Virgin Mojito","Lime, mint, sugar, and soda water",250],["Sunshine","Refreshing citrus blend",250],["Tropical Punch","Mixed tropical fruit juices",250],["Smurf","Blue curacao syrup, lemonade, and soda",250]]],["Beer","",[["Stella","",199],["Sakara Gold","",199],["Heineken","",199],["Sol","",199]]],["Spirits","Local shots",[["Whiskey (Shot)","",364],["Gin (Shot)","",364],["Vodka (Shot)","",364],["Tequila (Shot)","",364],["Rum (Shot)","",364]]],["Alcoholic Cocktails","",[["Piña Colada","White rum, coconut cream, and pineapple juice",465],["Blue Lagoon","Vodka, blue curacao, and lemonade",465],["Mojito","White rum, mint, lime, sugar, and soda water",465],["Long Island","Vodka, tequila, white rum, gin, triple sec, lemon juice, and cola",465],["Sex on the Beach","Vodka, peach schnapps, orange juice, and cranberry juice",465],["Cuba Libre","White rum, cola, and lime juice",465],["Screwdriver","Vodka and orange juice",465]]],["Wine","By the bottle",[["Obelisk","",650],["Shahrazade","",750],["Omar Khayam","",850],["Grand Marquiz","",900],["Beausoleil","",1000],["White Wine (Glass)","",150],["Red Wine (Glass)","",150]]],["Sparkling Wine","",[["Lavita","",1100],["Le Baron Method","",1700],["Le Baron Signature","",2200]]],["Country Panini","Served with tahini sauce, garlic dip, and homemade potatoes",[["Lamb Sausage Panini","Sautéed lamb sausage, bell pepper, onion, melted mozzarella cheese",203],["Chicken Olives Panini","Sautéed chicken, tomato, bell pepper, onion, olives, parsley, cheddar cheese",190]]],["Salad Bowls","",[["Arabic Caesar Salad","Shish tawook, mixed leaves, arugula, tahini dressing",205],["Pineapple Quinoa Salad","Pineapple, quinoa, tomato, onion, parsley, mint, lemon, honey mustard",195]]],["Burgers & Wraps","Served with homemade wedges, potatoes or French fries, and mixed olives",[["Beef Eater","Flame-grilled beef burger, toasted bun, lettuce, cheese, caramelized onion, tomato, egg",395],["Chicken Teriyaki","Shredded teriyaki chicken, cabbage, green curry paste, coriander, toasted tortilla bread",299],["Beef Fajitas","Soft flour tortilla, beef strips, capsicum, mushroom, onion, jalapeños, cheddar cheese, coriander, guacamole, sour cream",550],["Seafood Fajitas","Soft flour tortilla, shrimps, capsicum, mushroom, onion, jalapeños, cheddar cheese, coriander, guacamole, sour cream",610]]],["Crispy Baskets","Served with sweet chili sauce, mint labneh, wedge potatoes",[["Tender Sesame Chicken","Deep-fried chicken strips with sesame spice",299],["Chicken Lollipop","Deep-fried chicken wings, spices, cumin, sweet chili",296],["Crispy Calamari","Deep-fried calamari, spices",420],["Shrimp Kunafa","Deep-fried shrimp, spices, guacamole",612]]],["Dough and Co.","Pizzas. All homemade with a signature thin crust",[["Vegetarian","Mozzarella cheese, tomato sauce, zucchini, mushroom, sundried tomato, onions, bell pepper, olives. Vegetarian, contains dairy",345],["BBQ Chicken","Mozzarella cheese, tomato sauce, grilled chicken, roasted pepper, onion, BBQ sauce, black olives. Contains dairy, gluten",395],["Spiced Beef Steak","Mozzarella cheese, tomato sauce, grilled beef steak, sautéed onion, triple cheese, mushroom. Contains dairy, gluten",495],["The Marina","Mozzarella cheese, tomato sauce, shrimps, smoked salmon, calamari, mussel, tuna, coriander leaves. Seafood, contains dairy, gluten",495]]],["Mac & Cheese","Oven-baked specialty pasta bowls",[["Chicken Mac","Mac pasta, cheese sauce, sautéed chicken, green onions, mushrooms, chopped parsley",395],["Our Family Favorite","Traditional baked mac & cheese with short pasta, beef bacon, cheddar cheese sauce",425],["Lagoon Mac","Mac pasta, cheese sauce, grilled salmon, gouda, gruyère, herbed crumbs, basil",550]]],["Desserts","",[["Tiramisu","Mascarpone, ladyfinger biscuits, espresso coffee, chocolate chips",218],["Cheesecake","Mascarpone cheese, biscuit crust, mint, fresh seasonal fruits",226]]],["Extras","Add to your order",[["Add Extra Syrup/Shot","For non-alcoholic drinks (+20 EGP)",20],["Add Extra Cheese/Side","For food (+30 EGP)",30]]]];
+const WA='201275840672';
+const PTS=[['sheraton-a','Sheraton A'],['lagoon-a','Lagoon A'],['lagoon-b','Lagoon B'],['beach-a','Beach A'],['beach-b','Beach B']];
+const FOOD=['Country Panini','Salad Bowls','Burgers & Wraps','Crispy Baskets','Dough and Co.','Mac & Cheese'];
+const REM=['No onion','No cheese','No BBQ sauce','No vegetables'];
+const $=id=>document.getElementById(id);
+let cur=null;try{cur=PTS.find(p=>p[0]===new URLSearchParams(location.search).get('point'))||null}catch(e){}
+let UMB='';try{const u=new URLSearchParams(location.search).get('umb');if(u&&/^\d{1,3}$/.test(u))UMB=u}catch(e){}
+const sel=$('sel'),alg=$('alg'),ext=$('ext'),umb=$('umb'),flat={};
+if(UMB)umb.value=UMB;
+const loc=()=>{const v=umb.value.trim();return /^\d{1,3}$/.test(v)?'Umbrella '+v:v};
+PTS.forEach(p=>sel.insertAdjacentHTML('beforeend',`<option value="${p[1]}">${p[1]}</option>`));
+const pt=()=>cur?cur[1]:sel.value;
+function pre(){const l=loc();return 'Hello, '+(pt()?'I am at '+pt()+(l?', '+l:'')+' and ':(l?'I am at '+l+' and ':''))+'I would like to order: '}
+function showUb(){const l=loc(),u=$('ub');u.textContent=l;u.classList.toggle('hide',!l);setTop()}
+function setTop(){$('top').href='https://wa.me/'+WA+'?text='+encodeURIComponent(pre())}
+if(cur){$('admin').classList.add('hide');const w=$('welcome');w.textContent='Welcome, guests of '+cur[1]+(UMB?' (Umbrella '+UMB+')':'');w.classList.remove('hide')}else{$('selw').classList.remove('hide')}
+sel.addEventListener('change',setTop);setTop();
+try{$('base').value=location.href.split(/[?#]/)[0]}catch(e){}
+const nav=$('nav'),main=$('menu');
+M.forEach(([t,n,items],i)=>{
+ const id='s'+i,food=FOOD.includes(t);
+ nav.insertAdjacentHTML('beforeend',`<a href="#${id}">${t}</a>`);
+ main.insertAdjacentHTML('beforeend',`<section id="${id}"><h2>${t}</h2>${n?`<p class="note">${n}</p>`:''}${items.map(([a,d,p],j)=>{const k=i+'-'+j;flat[k]={a,p};return `<div class="item" id="it${k}"><div class="row"><div><b>${a}</b>${d?`<small>${d}</small>`:''}</div><div class="r"><span class="price">${p}</span><span class="qty" data-k="${k}"><button type="button" data-d="-1" aria-label="Remove one">−</button><output>0</output><button type="button" data-d="1" aria-label="Add one">+</button></span></div></div>${food?`<button type="button" class="cz" data-c="${k}" aria-expanded="false">Customize</button><div class="opts" id="o${k}"><label><input type="radio" name="s${k}" value="Regular" checked>Regular</label><label><input type="radio" name="s${k}" value="Spicy">Spicy</label>${REM.map(r=>`<label><input type="checkbox" value="${r}">${r}</label>`).join('')}</div>`:''}</div>`}).join('')}</section>`);
+});
+const CART={},bar=$('bar'),send=$('send'),sum=$('sum');
+function build(){let c=0,t=0;const L=[];Object.keys(CART).forEach(k=>{const q=CART[k];if(q>0){const it=flat[k],o=[...document.querySelectorAll('#it'+k+' .opts input:checked')].map(x=>x.value).filter(v=>v!=='Regular');c+=q;t+=q*it.p;L.push(q+' x '+it.a+(o.length?' ('+o.join(', ')+')':'')+' - '+q*it.p+' EGP')}});return{c,t,L}}
+function upd(){const{c,t,L}=build();bar.classList.toggle('hide',!c);sum.textContent=c+(c===1?' item: ':' items: ')+t+' EGP';$('locs').textContent=loc();
+ let m=pre()+(loc()?'\nLocation: '+loc():'')+'\n'+L.join('\n')+'\nTotal: '+t+' EGP';
+ if(alg.value.trim())m+='\nAllergies: '+alg.value.trim();
+ if(ext.value.trim())m+='\nExtras: '+ext.value.trim();
+ send.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m)}
+send.addEventListener('click',e=>{if(!umb.value.trim()){e.preventDefault();$('umbe').classList.remove('hide');umb.scrollIntoView({block:'center'});umb.focus();return}if(!pt()){e.preventDefault();$('selw').scrollIntoView({block:'center'});sel.focus()}});
+main.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.d){const w=b.parentElement,k=w.dataset.k;CART[k]=Math.max(0,(CART[k]||0)+Number(b.dataset.d));w.querySelector('output').textContent=CART[k];w.classList.toggle('on',CART[k]>0);upd()}
+ else if(b.classList.contains('cz')){const o=$('o'+b.dataset.c),x=o.classList.toggle('open');b.setAttribute('aria-expanded',x)}});
+main.addEventListener('change',upd);alg.addEventListener('input',upd);umb.addEventListener('input',()=>{$('umbe').classList.add('hide');showUb();upd()});
+showUb();upd();ext.addEventListener('input',upd);sel.addEventListener('change',upd);
+const cards=[];
+function card(name,url,num){
+ const m=qrMatrix(url),n=m.length,W=560,H=num?740:700,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
+ g.fillStyle='#eceee3';g.fillRect(0,0,W,H);g.strokeStyle='#272c1c';g.lineWidth=2;g.strokeRect(18,18,W-36,H-36);g.strokeStyle='#cdd2bc';g.lineWidth=1;g.strokeRect(26,26,W-52,H-52);
+ g.textAlign='center';g.fillStyle='#272c1c';g.font='700 40px Georgia,serif';g.fillText('ZEYTOUNA BEACH',W/2,95);
+ g.fillStyle='#5a6a22';g.font='500 22px Helvetica,Arial,sans-serif';g.fillText(name,W/2,135);
+ if(num){g.fillStyle='#272c1c';g.font='700 34px Georgia,serif';g.fillText('Umbrella '+num,W/2,182)}
+ const mod=Math.floor(380/(n+8)),S=mod*(n+8),x0=(W-S)/2,y0=num?210:170;
+ g.fillStyle='#fff';g.beginPath();g.roundRect?g.roundRect(x0-14,y0-14,S+28,S+28,16):g.rect(x0-14,y0-14,S+28,S+28);g.fill();
+ g.fillStyle='#161c0f';for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(m[y][x])g.fillRect(x0+(x+4)*mod,y0+(y+4)*mod,mod,mod);
+ g.fillStyle='#272c1c';g.font='600 30px Georgia,serif';g.fillText('Scan to view our menu',W/2,y0+S+62);
+ g.fillStyle='#646b53';g.font='italic 17px Georgia,serif';g.fillText('In cooperation with Three Corners Ocean View',W/2,H-60);
+ return c}
+const NUM=30,NUMBERED=PTS.filter(p=>p[0]!=='restaurant').map(p=>p[0]);
+const gp=$('gp');gp.insertAdjacentHTML('beforeend',PTS.map(p=>`<option value="${p[0]}">${p[1]} (30 codes)</option>`).join('')+'<option value="all">All points (150 codes)</option>');
+const jobs=pid=>{if(pid==='all')return PTS.flatMap(p=>jobs(p[0]));const p=PTS.find(x=>x[0]===pid),u=$('base').value.trim(),q=u.includes('?')?'&':'?';
+ if(NUMBERED.includes(pid))return Array.from({length:NUM},(_,i)=>({pid,name:p[1],num:i+1,file:pid+'/'+pid+'-umbrella-'+(i+1)+'.png',url:u+q+'point='+pid+'&umb='+(i+1)}));
+ return [{pid,name:p[1],num:0,file:pid+'/'+pid+'.png',url:u+q+'point='+pid}]};
+const okUrl=()=>{if(!/^https?:\/\//i.test($('base').value.trim())){alert('Please enter the full web address, starting with https://');return false}return true};
+const crcT=(()=>{const t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+const crc=d=>{let c=0xFFFFFFFF;for(let i=0;i<d.length;i++)c=crcT[(c^d[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0};
+function zip(files){const enc=new TextEncoder(),parts=[],cd=[];let off=0;
+ files.forEach(f=>{const nm=enc.encode(f.name),c=crc(f.data),h=new DataView(new ArrayBuffer(30));
+  h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(8,0,true);h.setUint32(14,c,true);h.setUint32(18,f.data.length,true);h.setUint32(22,f.data.length,true);h.setUint16(26,nm.length,true);
+  parts.push(new Uint8Array(h.buffer),nm,f.data);
+  const e=new DataView(new ArrayBuffer(46));e.setUint32(0,0x02014b50,true);e.setUint16(4,20,true);e.setUint16(6,20,true);e.setUint32(16,c,true);e.setUint32(20,f.data.length,true);e.setUint32(24,f.data.length,true);e.setUint16(28,nm.length,true);e.setUint32(42,off,true);
+  cd.push(new Uint8Array(e.buffer),nm);off+=30+nm.length+f.data.length});
+ const cs=cd.reduce((a,x)=>a+x.length,0),end=new DataView(new ArrayBuffer(22));
+ end.setUint32(0,0x06054b50,true);end.setUint16(8,files.length,true);end.setUint16(10,files.length,true);end.setUint32(12,cs,true);end.setUint32(16,off,true);
+ return new Blob([...parts,...cd,new Uint8Array(end.buffer)],{type:'application/zip'})}
+function save(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
+function dl(c,name){const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=name;document.body.appendChild(a);a.click();a.remove()}
+async function zipJobs(list,name){if(!okUrl())return;const st=$('gst'),files=[];
+ try{for(let i=0;i<list.length;i++){const j=list[i];st.textContent='Preparing '+(i+1)+' of '+list.length+'...';
+  const c=card(j.name,j.url,j.num),bl=await new Promise(r=>c.toBlob(r,'image/png'));files.push({name:j.file,data:new Uint8Array(await bl.arrayBuffer())});
+  if(i%5===4)await new Promise(r=>setTimeout(r,0))}
+  save(zip(files),name);st.textContent='Done: '+list.length+' QR codes in '+name}catch(err){st.textContent='Could not create the codes: '+err.message}}
+$('gen').addEventListener('click',async()=>{if(!okUrl())return;
+ const box=$('qrs'),st=$('gst');box.textContent='';st.textContent='';
+ try{const list=jobs(gp.value);
+  for(let i=0;i<list.length;i++){const j=list[i],lab=j.name+(j.num?' - Umbrella '+j.num:'');
+   const c=card(j.name,j.url,j.num),d=document.createElement('div');d.className='qc';d.appendChild(c);
+   const t=document.createElement('div');t.textContent=lab;t.style.fontWeight='500';d.appendChild(t);
+   const l=document.createElement('a');l.href='#';l.textContent='Download image';l.addEventListener('click',ev=>{ev.preventDefault();dl(c,j.file.split('/')[1])});d.appendChild(l);box.appendChild(d);
+   st.textContent='Generated '+(i+1)+' of '+list.length;
+   if(i%5===4)await new Promise(r=>setTimeout(r,0))}
+  st.textContent='Done: '+list.length+' QR codes. Use the download button to get them all as images (ZIP).';
+  $('dlsel').classList.remove('hide')}catch(err){box.textContent='Could not create the codes: '+err.message}});
+$('dlsel').addEventListener('click',()=>zipJobs(jobs(gp.value),'zeytouna-qr-'+gp.value+'.zip'));
+
+
+const LANGS=[['AR','ar',"أهلاً بك في جزيرة الزيتونة.. حيث تلتقي زرقة المياه بنقاء السماء. هنا، في هذه البقعة الساحرة من البحر الأحمر، صنعنا لك مساحة لتهدأ فيها الروح وتستمتع بلحظات لا تُنسى. أنت لست مجرد ضيف عندنا، أنت جزء من ذكريات هذه الجزيرة. استمتع بوقتك، فكل تفصيلة هنا صُممت من أجلك.","رأيك يهمنا.. شاركنا تجربتك"],
+['EN','en',"Welcome to Zeytouna Island, where crystal-clear waters meet the endless sky. Here, in this enchanting corner of the Red Sea, we have created a space for your soul to rest and for moments you will never forget. You are not just a guest, you are part of this island's memories. Enjoy your time, every detail here was made for you.","Your opinion matters. Share your experience with us."],
+['DE','de',"Willkommen auf Zeytouna Island, wo kristallklares Wasser auf den endlosen Himmel trifft. Hier, an diesem zauberhaften Ort am Roten Meer, haben wir einen Raum geschaffen, in dem Ihre Seele zur Ruhe kommt und Sie unvergessliche Momente erleben. Sie sind nicht nur ein Gast, Sie sind Teil der Erinnerungen dieser Insel. Genießen Sie Ihre Zeit, denn jedes Detail hier wurde für Sie gestaltet.","Ihre Meinung ist uns wichtig. Teilen Sie Ihre Erfahrung mit uns."],
+['RU','ru',"Добро пожаловать на остров Зейтуна, где кристально чистые воды встречаются с бескрайним небом. Здесь, в этом волшебном уголке Красного моря, мы создали место, где душа обретает покой, а моменты остаются незабываемыми. Вы не просто гость, вы часть воспоминаний этого острова. Наслаждайтесь временем: каждая деталь здесь создана для вас.","Ваше мнение важно для нас. Поделитесь с нами своими впечатлениями."],
+['FR','fr',"Bienvenue sur l'île de Zeytouna, où des eaux cristallines rencontrent un ciel infini. Ici, dans ce coin enchanteur de la mer Rouge, nous avons créé un espace où l'âme s'apaise et où naissent des moments inoubliables. Vous n'êtes pas qu'un simple invité, vous faites partie des souvenirs de cette île. Profitez de votre séjour, chaque détail a été pensé pour vous.","Votre avis compte. Partagez votre expérience avec nous."],
+['NL','nl',"Welkom op Zeytouna Island, waar kristalhelder water de eindeloze hemel ontmoet. Hier, op deze betoverende plek aan de Rode Zee, hebben we een ruimte gecreëerd waar uw ziel tot rust komt en u onvergetelijke momenten beleeft. U bent niet zomaar een gast, u maakt deel uit van de herinneringen van dit eiland. Geniet van uw tijd, want elk detail hier is voor u gemaakt.","Uw mening is belangrijk. Deel uw ervaring met ons."],
+['IT','it',"Benvenuti a Zeytouna Island, dove le acque cristalline incontrano il cielo infinito. Qui, in questo angolo incantevole del Mar Rosso, abbiamo creato uno spazio dove l'anima trova pace e i momenti restano indimenticabili. Non siete solo ospiti: siete parte dei ricordi di quest'isola. Godetevi il vostro tempo, ogni dettaglio qui è stato pensato per voi.","La tua opinione è importante. Condividi la tua esperienza con noi."]];
+(function(){const box=$('lang'),wm=$('wmsg'),op=$('op');
+ function setL(code){LANGS.forEach(l=>{if(l[0]===code){wm.textContent=l[2];op.textContent=l[3];[wm,op].forEach(e=>{e.lang=l[1];e.dir=code==='AR'?'rtl':'ltr'})}});
+  box.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===code))}
+ LANGS.forEach(l=>{const b=document.createElement('button');b.type='button';b.dataset.l=l[0];b.textContent=l[0];b.addEventListener('click',()=>setL(l[0]));box.appendChild(b)});
+ setL('EN')})();
+</script></body></html>
